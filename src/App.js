@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
 import './App.css';
+import Nav from './Nav'
+import Home from './Home'
+import Footer from './Footer'
+
 
 function App() {
+
+  const [events, setEvents] = useState()
+  const [weekly, setWeekly] = useState()
+
+  useEffect(() => {
+    const url = "https://gda-backend.herokuapp.com/getEvents";
+    const fetchData = async () => {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            setEvents(data)
+        } catch (error) {
+            console.log("error", error);
+        }
+    };
+    fetchData();
+  }, []);
+  useEffect(() => {
+    const url = "https://gda-backend.herokuapp.com/getWeekly";
+    const fetchData = async () => {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            setWeekly(data)
+        } catch (error) {
+            console.log("error", error);
+        }
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Nav />
+      <Home allEvents={events} weeklies={weekly}/>
+      <Footer />
+    </>
+  )
 }
 
 export default App;
