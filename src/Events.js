@@ -17,7 +17,6 @@ function Events({allEvents}) {
     }
     return (
         <div className="events-container">
-            <h1 className="event-header">Main Calendar</h1>
             <div className="events-list">
                 {eventList}
             </div>

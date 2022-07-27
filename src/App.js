@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import Nav from './Nav'
-import Home from './Home'
 import Footer from './Footer'
+import Hero from './Hero'
+import EventContainer from './EventContainer';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   useEffect(() => {
     const url = "https://gda-backend.herokuapp.com/getWeekly";
     const fetchData = async () => {
-        try {
+        try { 
             const response = await fetch(url);
             const data = await response.json();
             setWeekly(data)
@@ -40,7 +41,8 @@ function App() {
   return (
     <>
       <Nav />
-      <Home allEvents={events} weeklies={weekly}/>
+      <Hero />
+      <EventContainer weekly={weekly} events={events}/>
       <Footer />
     </>
   )

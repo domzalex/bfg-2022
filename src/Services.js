@@ -1,20 +1,10 @@
 import React, { useRef } from 'react'
 
-function Services() {
-
-
-    const modal = useRef()
-    const close = useRef()
-
-    function closeModal() {
-        if (modal) {
-            modal.current.style.display = 'none'
-        }
-    }
+function Services({setServices}) {
 
     return (
-        <div ref={modal} className="services-modal">
-            <div ref={close} onClick={closeModal} className="services-close"></div>
+        <div className="services-modal">
+            <div onClick={() => setServices(false)} className="modal-close"></div>
             <h1 className="services-header">Services We Offer</h1>
             <div className="services-group">
                 <ul className="services-one">

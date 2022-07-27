@@ -40,7 +40,7 @@ function Thursday({weeklies}) {
             <div className="weekly weekly-thursday">
                 <h2 className="weekly-header">Thursday</h2>
                 <div className="weekly-event-list thursday">
-                    <h1>No events scheduled</h1>
+                    <h1 className="no-events">No events scheduled</h1>
                 </div>
             </div>
         )

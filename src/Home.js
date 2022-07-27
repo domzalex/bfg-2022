@@ -10,7 +10,7 @@ function Home({allEvents, weeklies}) {
             <Hero />
             <Weekly weeklies={weeklies}/>
             <Events allEvents={allEvents}/>
-            {/* <Services /> */}
+            <Services />
         </div>
     );
 }
