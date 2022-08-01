@@ -1,4 +1,5 @@
 import React from 'react'
+import WeeklyList from './WeeklyList'
 
 function Saturday({weeklies}) {
 
@@ -11,11 +12,7 @@ function Saturday({weeklies}) {
             if (weekly.date === 'Saturday') {
                 count ++
                 return (
-                    <ul>
-                        <li className="weekly-name">{weekly.name}</li>
-                        <li className="weekly-time">{weekly.time}</li>
-                        <li className="weekly-location">{weekly.location}</li>
-                    </ul>
+                    <WeeklyList weekly={weekly}/>
                 )
             }
         })

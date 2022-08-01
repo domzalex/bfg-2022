@@ -20,7 +20,7 @@ function Nav() {
     return (
         <>
             <div className="nav">
-                <a href="/">B.F.G. Productions</a>
+                <a className="home-link" href="/">B.F.G. Productions</a>
                 <ul className="nav-link-group">
                     <ArtistBtn />
                     <ServicesBtn />
