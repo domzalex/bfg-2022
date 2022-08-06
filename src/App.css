@@ -277,20 +277,24 @@
     border-bottom: solid 1px rgb(30,30,30);
     /* background-color: rgb(8, 8, 8); */
 }
+.weekly-name-date {
+    display: flex;
+    width: 40%;
+}
 .weekly-event-list ul li {
     padding: 15px 10px;
 }
 .weekly-name {
-    width: 25%;
+    width: 100%;
     border-right: solid 1px rgb(30,30,30);
 }
 .weekly-time {
-    width: 10%;
+    width: 25%;
     border-right: solid 1px rgb(30,30,30);
     text-align: center;
 }
 .weekly-location {
-    width: 65%;
+    width: 85%;
     text-align: right;
 }
 
@@ -482,7 +486,8 @@
     .weekly-name-date {
         width: 100%;
         display: flex;
-        border-bottom: solid 1px rgb(30,30,30);
+        border-top: solid 1px rgb(30,30,30);
+        order: 1;
     }
     .weekly-event-list h1 {
         font-size: 0.8em;
