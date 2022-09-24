@@ -40,10 +40,8 @@ function App() {
 
   return (
     <>
-      <Nav />
       <Hero />
       <EventContainer weekly={weekly} events={events}/>
-      <Footer />
     </>
   )
 }

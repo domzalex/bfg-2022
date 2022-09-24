@@ -1,41 +1,19 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import Services from './Services'
 import Artists from './Artists'
 
 function Nav() {
-    const ArtistBtn = () => {
-        return <li onClick={() => {setServices(false); setArtists(true); setMerch(false)}} className="nav-link artists">Artist Roster</li>
-    }
-    const ServicesBtn = () => {
-        return <li onClick={() => {setServices(true); setArtists(false); setMerch(false)}} className="nav-link services inactive">Our Services</li>
-    }
-    const MerchBtn = () => {
-        return <li onClick={() => {setServices(false); setArtists(false); setMerch(true)}} className="nav-link merchandise inactive">Merchandise</li>
-    }
-
-    const [showServices, setServices] = useState(false)
-    const [showArtists, setArtists] = useState(false)
-    const [showMerch, setMerch] = useState(false)
 
     return (
         <>
             <div className="nav">
-                <a className="home-link" href="/">B.F.G. Productions</a>
+                <Link className="home-link" to="/">B.F.G. Productions</Link>
                 <ul className="nav-link-group">
-                    <ArtistBtn />
-                    <ServicesBtn />
-                    <MerchBtn />
+                    {/* <Link className="nav-link" to="/Artists">Artist Roster</Link> */}
+                    <a className="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfpmlHkx2qXkvwKM0JOvq80YkGUkYEnzUPt1yiLelrndY3yMw/viewform?usp=sf_link" target="_blank">Join B.F.G.</a>
                 </ul>
             </div>
-            {
-                showServices? <Services setServices={setServices}/> : null
-            }
-            {
-                showArtists? <Artists setArtists={setArtists}/> : null
-            }
-            {/* {
-                showMerch? <Merch /> : null
-            } */}
         </>
     )
 }
