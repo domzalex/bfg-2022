@@ -174,7 +174,7 @@
     border-bottom: solid 1px white;
 }
 .event-header-background {
-    width: 50vw;
+    width: 100vw;
     height: 70px;
     background-color: white;
     position: absolute;
@@ -184,15 +184,15 @@
 }
 .weekly-title,
 .main-title {
-    width: 50vw;
+    width: 100vw;
     text-align: center;
     line-height: 70px;
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 1;
 }
 .weekly-title:hover,
 .main-title:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .main-title {
     color: white;
